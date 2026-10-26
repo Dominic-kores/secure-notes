@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Paper & ink palette */
+:root {
+  --paper: #f6f1e7;
+  --paper-dot: #e4dccb;
+  --card: #fffdf8;
+  --ink: #2b2a33;
+  --ink-soft: #6e6a78;
+  --line: #e2dccf;
+  --rule: #d5e3f0;
+  --margin: #e8a0a0;
+  --accent: #2f5d50;
+  --accent-ink: #fffdf8;
+  --accent-soft: rgba(47, 93, 80, 0.12);
+  --highlight: #ffe58a;
+  --tape: rgba(240, 214, 140, 0.75);
+  --danger: #b4443a;
+  --danger-soft: rgba(180, 68, 58, 0.1);
+  --shadow: 0 1px 0 rgba(43, 42, 51, 0.04), 0 8px 20px -10px rgba(43, 42, 51, 0.25);
+  --shadow-lift: 0 2px 0 rgba(43, 42, 51, 0.05), 0 18px 30px -12px rgba(43, 42, 51, 0.35);
+
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  font: 16px/1.55 var(--sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Night-desk palette, used by body.dark */
+body.dark {
+  --paper: #1b1d22;
+  --paper-dot: #2a2d34;
+  --card: #24272e;
+  --ink: #ece7dc;
+  --ink-soft: #9c978c;
+  --line: #353943;
+  --rule: #2f3a46;
+  --margin: #8a4a4a;
+  --accent: #7fc4ac;
+  --accent-ink: #12201b;
+  --accent-soft: rgba(127, 196, 172, 0.14);
+  --highlight: #8a7426;
+  --tape: rgba(190, 165, 95, 0.45);
+  --danger: #e2786d;
+  --danger-soft: rgba(226, 120, 109, 0.14);
+  --shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 8px 20px -10px rgba(0, 0, 0, 0.6);
+  --shadow-lift: 0 2px 0 rgba(0, 0, 0, 0.3), 0 18px 30px -12px rgba(0, 0, 0, 0.8);
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image: radial-gradient(var(--paper-dot) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+#root {
+  width: 1120px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px 64px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.15;
+}
+
+p {
+  margin: 0;
+}
+
+::selection {
+  background: var(--highlight);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px dashed var(--accent);
+  outline-offset: 3px;
+}

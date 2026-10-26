@@ -16,8 +16,6 @@ A full-stack note-taking app where every user has a private, password-protected 
 - [Deployment](#deployment)
 - [API reference](#api-reference)
 - [Data model](#data-model)
-- [Scripts](#scripts)
-- [Troubleshooting](#troubleshooting)
 - [Author](#author)
 
 ---
@@ -88,12 +86,7 @@ secure-notes-app/
 
 ## Getting started (local)
 
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) 20 or newer
-- A PostgreSQL database (for example a free [Supabase](https://supabase.com/) project)
-
-### 1. Set up the server
+### Set up the server
 
 ```bash
 cd server
@@ -129,7 +122,7 @@ npm run dev
 
 The API runs at **http://localhost:4001**. Check it at http://localhost:4001/api/health.
 
-### 2. Set up the client
+### Set up the client
 
 In a second terminal:
 
@@ -161,7 +154,7 @@ Browser ──▶ Vercel (React client) ──▶ Railway (Express API) ──�
 
 Deploy the **API first**, because the client needs its URL.
 
-### 1. Database (Supabase)
+###  Database (Supabase)
 
 1. Create a project at [supabase.com](https://supabase.com/).
 2. Go to **Project Settings → Database → Connection string** and copy the URI. This is your `DATABASE_URL`.
@@ -212,7 +205,7 @@ Deploy the **API first**, because the client needs its URL.
 
 4. Click **Deploy**.
 
-### 4. Connect the two
+###  Connect the two
 
 If your Vercel URL changed after deploying, go back to Railway and update `CLIENT_URL` to the exact Vercel URL. Then redeploy the API so CORS allows the client.
 
@@ -281,38 +274,7 @@ Each user has many notes; deleting a user deletes their notes.
 
 ---
 
-## Scripts
-
-| Location | Command           | What it does |
-|----------|-------------------|--------------|
-| server   | `npm run dev`     | Start the API with auto-restart (nodemon) |
-| server   | `npm start`       | Start the API (used in production) |
-| client   | `npm run dev`     | Start the React dev server |
-| client   | `npm run build`   | Build the client for production into `client/dist` |
-| client   | `npm run preview` | Preview the production build |
-| client   | `npm run lint`    | Run ESLint |
-
-## Troubleshooting
-
-| Problem | Fix |
-|---------|-----|
-| "Cannot GET /api" or a JSON page at the API address | That's the API. Open the client at `localhost:5173` or your Vercel URL |
-| Blank page in the client | Open the browser DevTools Console. An import error stops the whole app from rendering |
-| "Failed to start server" / port in use | Another process is using port 4001. Stop it, or change `PORT` and `VITE_API_URL` to match |
-| CORS error in the browser | `CLIENT_URL` on the server must exactly match the client's address (no trailing slash) |
-| Deployed client still calls `localhost` | `VITE_API_URL` wasn't set when the client was built. Set it on Vercel and redeploy |
-| Railway build fails on Prisma | Make sure the build command includes `npx prisma generate` and `DATABASE_URL` is set |
-| Everyone gets "Too many requests" in production | Add `app.set('trust proxy', 1)` (see [Deployment](#deployment)) |
-| Logged out unexpectedly | Tokens expire after 24 hours, so log in again |
-
----
-
 ## Author
 
 **Dominic Kisioya**
-
-- GitHub: [@Dominic-kores](https://github.com/Dominic-kores)
-
-Feel free to open an issue or reach out with feedback or suggestions.
-# secure-notes
-# secure-notes
+** Full Stack Developer & AI Engineer**
