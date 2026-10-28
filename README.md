@@ -178,16 +178,16 @@ Deploy the **API first**, because the client needs its URL.
    |----------------|-------|
    | `DATABASE_URL` | Your Supabase connection string |
    | `JWT_SECRET`   | A long random secret (different from your local one) |
-   | `CLIENT_URL`   | Your Vercel URL, e.g. `https://secure-notes.vercel.app` (no trailing slash) |
+   | `CLIENT_URL`   | Your Vercel URL, e.g. `https://secure-notes-mauve.vercel.app` (no trailing slash) |
 
    Railway sets `PORT` automatically, so don't add it.
 
-5. Under **Settings → Networking**, click **Generate Domain**. You'll get a URL like `https://secure-notes-api.up.railway.app`.
-6. Check it works: `https://<your-railway-domain>/api/health` should return `{"status":"ok"}`.
+5. Under **Settings → Networking**, click **Generate Domain**. You'll get a URL like `https://secure-notes-production-c3fe.up.railway.app`.
+6. Check it works: `https://secure-notes-production-c3fe.up.railway.app/api/health` should return `{"status":"ok"}`.
 
 ### 3. Client on Vercel
 
-1. In [Vercel](https://vercel.com/), click **Add New → Project** and import the same GitHub repository.
+1. In [Vercel](https://secure-notes-mauve.vercel.app), click **Add New → Project** and import the same GitHub repository.
 2. Configure the project:
 
    | Setting          | Value |
@@ -201,7 +201,7 @@ Deploy the **API first**, because the client needs its URL.
 
    | Variable       | Value |
    |----------------|-------|
-   | `VITE_API_URL` | `https://<your-railway-domain>/api` |
+   | `VITE_API_URL` | `https://secure-notes-production-c3fe.up.railway.app/api` |
 
 4. Click **Deploy**.
 
@@ -217,7 +217,7 @@ If your Vercel URL changed after deploying, go back to Railway and update `CLIEN
 
 ## API reference
 
-Base URL: `http://localhost:4001/api` locally, or `https://<your-railway-domain>/api` in production.
+Base URL: `http://localhost:4001/api` locally, or `https://secure-notes-production-c3fe.up.railway.app/api` in production.
 
 Routes marked 🔒 need an `Authorization: Bearer <token>` header. You get the token from register or login.
 
@@ -277,4 +277,4 @@ Each user has many notes; deleting a user deletes their notes.
 ## Author
 
 **Dominic Kisioya**
-** Full Stack Developer & AI Engineer**
+**Full Stack Developer & AI Engineer**
